@@ -1,0 +1,26 @@
+<div class="nav">
+  <ul>
+    <li>
+      <a routerLink='/smestaj'>Profili</a>
+    </li>
+    <li>
+      <a routerLink='/lokacije'>Lokacije</a>
+    </li>
+    <li>
+      <a routerLink='/tagovi'>Tagovi</a>
+    </li>
+    <li *ngIf="!isLoggedIn">
+      <a routerLink='/login'>Prijava</a>
+    </li>
+    <li *ngIf="!isLoggedIn">
+      <a routerLink='/registracija'>Registracija</a>
+    </li>
+    <li *ngIf="isLoggedIn">
+      <a routerLink='/poruke'>Poruke</a>
+    </li>
+  </ul>
+</div>
+<div *ngIf="isLoggedIn" class="logoutLblPos">
+  <button class="btn btn-default btn-xs" (click)="logout()">Odjavi se</button>
+  <button class="btn btn-default btn-xs" routerLink='profil' >Profil</button>
+</div>

@@ -1,0 +1,32 @@
+<div class="col-75">
+  <div class="container">
+    <form name="form" (ngSubmit)="f.form.valid && search()" #f="ngForm" novalidate>
+      <div class="col-50">
+        <h2>Pretraga po lokaciji</h2>
+        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !mesto.valid }">
+          <label for="mesto">Naziv lokacije:</label>
+          <input type="text" id="mesto" name="mesto" [(ngModel)]="naziv" #mesto="ngModel" required>
+          <div *ngIf="f.submitted && !mesto.valid" class="help-block">Naziv lokacije je obavezan</div>
+        </div>
+      </div>
+      <button type="submit" class="btn">Pretrazi</button>
+    </form>
+  </div>
+</div>
+
+<div *ngIf="rezultati">
+  <div class="rezultati">
+
+    <h1>
+      <b>Rezultati pretrage:</b>
+    </h1>
+    <div *ngFor="let s of smestaj">
+      <a [routerLink]="['detalji/' + s.id]">
+        <div class="container2">
+          <h2> {{s.naziv}}</h2>
+          
+        </div>
+      </a>
+    </div>
+  </div>
+</div>

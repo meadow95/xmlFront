@@ -1,0 +1,10 @@
+<h1>Primljene poruke</h1>
+<div *ngFor="let primljena of primljene_poruke">
+  <p>Posaljilac: {{primljena?.posaljilac}}</p>
+  <p>{{primljena?.sadrzaj}}</p>
+</div>
+<h1>Poslate poruke</h1>
+<div *ngFor="let poslata of poslate_poruke">
+  <p>Primalac: {{poslata?.primalac}}</p>
+  <p>{{poslata?.sadrzaj}}</p>
+</div>

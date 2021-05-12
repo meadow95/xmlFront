@@ -1,0 +1,10 @@
+<div class="col-md-4 col-md-offset-4">
+<form (ngSubmit)="f.form.valid && sendMessage()" class="register-form" #f="ngForm" novalidate>
+  <p>Primalac: {{agent?.ime}} {{agent?.prezime}}</p>
+  <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !poruka.valid }">
+    <textarea class="form-control" id="txtarea" type="text" rows="8" placeholder="Tekst poruke..." cols="50" name="poruka" [(ngModel)]="message" #poruka="ngModel" required ></textarea>
+    <div class="help-block" *ngIf="f.submitted && !poruka.valid">Tekst poruke je prazan</div>
+  </div>
+  <button class="btn btn-primary">Posalji poruku</button>
+</form>
+</div>

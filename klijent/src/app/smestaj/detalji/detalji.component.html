@@ -1,0 +1,38 @@
+<div class="col-md-4 col-md-offset-4">
+  <h1>{{smestaj?.naziv}}</h1>
+  <h4>Kapacitet: {{smestaj?.kapacitet}}</h4>
+  <h4>Mesto: {{smestaj?.naseljeno_mesto.naziv}}</h4>
+  <div>
+    <h4>Agent: {{smestaj?.agent?.ime}} {{smestaj?.agent?.prezime}}</h4>
+    <h4>Kategorija: {{smestaj?.kategorijaSmestaja?.naziv}}</h4>
+    <h4>Dodatne usluge:</h4>
+    <div *ngFor="let d of smestaj?.dodatne_usluge">
+      <h5>{{d.naziv}}</h5>
+    </div>
+    <h4>Dolazak: {{date1}}</h4>
+    <h4>Odlazak: {{date2}}</h4>
+    <h4>Cena za izabrani termin: {{smestaj?.cena}}</h4>
+
+    <h4>Komentari: </h4>
+    <div *ngFor="let k of smestaj?.komentari">
+      <div *ngIf="k.odobren">
+        <h4>{{k.ime}}</h4>
+        <p>{{k.sadrzaj}}</p>
+      </div>
+    </div>
+    <div>
+      <div *ngIf="dopustenKomentar">
+        <form (ngSubmit)="f.form.valid && addComment()" class="register-form" #f="ngForm" novalidate>
+          <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !comment.valid }">
+            <textarea class="form-control" id="txtarea" type="text" rows="4" placeholder="Unesite tekst komentara ovde..." cols="100"
+              name="comment" [(ngModel)]="koment" #comment="ngModel" required></textarea>
+            <div class="help-block" *ngIf="f.submitted && !comment.valid">Ne mozete objaviti prazan komentar</div>
+          </div>
+          <button class="btn btn-primary">Objavi komentar</button>
+        </form>
+      </div>
+      <div>
+        <button (click)="rezervisi()" class="btn btn-success">Rezervisi</button>
+      </div>
+    </div>
+  </div>

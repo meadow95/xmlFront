@@ -1,0 +1,28 @@
+<div class="col-75">
+  <div class="container">
+   
+    <form name="form" (ngSubmit)="f.form.valid && search()" #f="ngForm" novalidate>
+      <div class="col-50">
+        <h2>Pretraga profila</h2>
+        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !mesto.valid }">
+          <label for="mesto">Username profila:</label>
+          <input type="text" id="mesto" name="mesto" [(ngModel)]="username" #mesto="ngModel" required>
+          <div *ngIf="f.submitted && !mesto.valid" class="help-block">Username je obavezan</div>
+        </div>
+      </div>
+      <button type="submit" class="btn">Pretraži</button>
+    </form>
+  </div>
+</div>
+
+<div *ngIf="profil">
+  <div class="rezultati">
+
+
+    <div>
+      <div class="container2">
+        <h2> {{profil.username}}</h2>
+      </div>
+    </div>
+  </div>
+</div>
