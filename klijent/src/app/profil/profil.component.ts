@@ -16,7 +16,7 @@ export class ProfilComponent implements OnInit {
 
   korisnik: Korisnik;
   
-  nkorisnik = new Korisnik('', '', '', '', '', '', '', '', [], [], [], []);
+  nkorisnik = new Korisnik('', '', '', '', '', '', '', '', [], [], [], [], []);
 
   constructor(
     private korisnikService: KorisnikService,

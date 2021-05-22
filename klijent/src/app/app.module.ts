@@ -29,6 +29,7 @@ import { PorukaService } from './services/poruka.service';
 import { PorukeComponent } from './poruke/poruke.component';
 import { LokacijeComponent } from './lokacije/lokacije.component';
 import { TagoviComponent } from './tagovi/tagovi.component';
+import { ProfilPretragaComponent } from './profil-pretraga/profil-pretraga.component';
 
 
 
@@ -47,6 +48,7 @@ import { TagoviComponent } from './tagovi/tagovi.component';
     PorukeComponent,
     LokacijeComponent,
     TagoviComponent,
+    ProfilPretragaComponent,
 
   ],
   imports: [

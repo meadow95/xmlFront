@@ -12,6 +12,8 @@ const httpOptions = {
 @Injectable()
 export class KorisnikService {
 
+  username: string;
+
   private url_signup = 'http://localhost:8080/signup';
   private url_korisnik = 'http://localhost:8080/user';
 
@@ -29,6 +31,10 @@ export class KorisnikService {
 
   getKorisnikByUsername(username: any): Observable<Korisnik> {
     return this.http.get<Korisnik>('http://localhost:8080/korisnikUsername/' + username + '/');
+  }
+
+  getKorisnikByUsernameSearch(): Observable<Korisnik> {
+    return this.http.get<Korisnik>('http://localhost:8080/korisnikUsername/' + this.username + '/');
   }
 
   constructor(private http: HttpClient) { }

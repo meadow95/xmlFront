@@ -1,3 +1,4 @@
+import { Post } from '../model/post';
 import { Poruka } from './../model/poruka';
 
 export class Korisnik {
@@ -10,11 +11,11 @@ export class Korisnik {
     public brtel: string,
     public adresa: string,
     public pmb: string,
-    
     public primljene_poruke: Array<Poruka>,
     public poslate_poruke: Array<Poruka>,
     public pratioci: Array<Korisnik>,
     public pratim: Array<Korisnik>,
+    public postovi: Array<Post>,
     public id?: string
   ) { }
 }

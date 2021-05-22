@@ -21,7 +21,8 @@
 
     <div>
       <div class="container2">
-        <h2> {{profil.username}}</h2>
+        <h2><a (click)="profilClick(profil)" href="#" routerLinkActive='active'
+          [routerLink]="['/profilPretraga']"> {{profil.username}}</a></h2>
       </div>
     </div>
   </div>

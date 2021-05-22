@@ -59,6 +59,12 @@ export class SmestajComponent implements OnInit {
 
   }
 
+  profilClick(korisnik: Korisnik){
+
+    this.korisnikService.username = korisnik.username;
+
+  }
+
   search() {
    
 
