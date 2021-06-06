@@ -10,6 +10,7 @@ import { LoginComponent } from '../login/login.component';
 import { TagoviComponent } from '../tagovi/tagovi.component';
 import { LokacijeComponent } from '../lokacije/lokacije.component';
 import { ProfilPretragaComponent } from '../profil-pretraga/profil-pretraga.component';
+import { NoviComponent } from '../novi_post/novi.component';
 
 const routes: Routes = [
   { path: 'smestaj', component: SmestajComponent },
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'tagovi', component: TagoviComponent},
   { path: 'lokacije', component: LokacijeComponent},
   { path: 'profilPretraga', component: ProfilPretragaComponent},
+  { path: 'newPost', component: NoviComponent},
 ];
 
 @NgModule({

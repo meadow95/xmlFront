@@ -30,6 +30,11 @@ import { PorukeComponent } from './poruke/poruke.component';
 import { LokacijeComponent } from './lokacije/lokacije.component';
 import { TagoviComponent } from './tagovi/tagovi.component';
 import { ProfilPretragaComponent } from './profil-pretraga/profil-pretraga.component';
+import { PostComponent } from './post/post.component';
+import { PostService } from './post.service';
+import { HomeComponent } from './home/home.component';
+import { ZahteviComponent } from './zahtevi/zahtevi.component';
+import { NoviComponent } from './novi_post/novi.component';
 
 
 
@@ -49,6 +54,10 @@ import { ProfilPretragaComponent } from './profil-pretraga/profil-pretraga.compo
     LokacijeComponent,
     TagoviComponent,
     ProfilPretragaComponent,
+    PostComponent,
+    HomeComponent,
+    ZahteviComponent,
+    NoviComponent,
 
   ],
   imports: [
@@ -66,6 +75,7 @@ import { ProfilPretragaComponent } from './profil-pretraga/profil-pretraga.compo
     ToggleLoginService,
     KomentarService,
     PorukaService,
+    PostService,
     {provide: HTTP_INTERCEPTORS,
       useClass: Interceptor,
       multi : true},

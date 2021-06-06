@@ -16,7 +16,7 @@ export class ProfilComponent implements OnInit {
 
   korisnik: Korisnik;
   
-  nkorisnik = new Korisnik('', '', '', '', '', '', '', '', [], [], [], [], []);
+  nkorisnik = new Korisnik('', '', '', '', '', '', [], [], []);
 
   constructor(
     private korisnikService: KorisnikService,
@@ -50,20 +50,17 @@ export class ProfilComponent implements OnInit {
     if (this.nkorisnik.username === "") {
       this.nkorisnik.username = this.korisnik.username;
     }
-    if (this.nkorisnik.ime === "") {
-      this.nkorisnik.ime = this.korisnik.ime;
+    if (this.nkorisnik.name === "") {
+      this.nkorisnik.name = this.korisnik.name;
     }
-    if (this.nkorisnik.prezime === "") {
-      this.nkorisnik.prezime = this.korisnik.prezime;
+    if (this.nkorisnik.surname === "") {
+      this.nkorisnik.surname = this.korisnik.surname;
      }
      if(this.nkorisnik.email === ""){
        this.nkorisnik.email = this.korisnik.email;
      }
      if(this.nkorisnik.password === ""){
        this.nkorisnik.password = this.korisnik.password;
-     }
-     if(this.nkorisnik.brtel === ""){
-       this.nkorisnik.brtel = this.korisnik.brtel;
      }
   }
 }

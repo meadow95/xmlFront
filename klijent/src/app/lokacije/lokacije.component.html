@@ -5,7 +5,7 @@
         <h2>Pretraga po lokaciji</h2>
         <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !mesto.valid }">
           <label for="mesto">Naziv lokacije:</label>
-          <input type="text" id="mesto" name="mesto" [(ngModel)]="naziv" #mesto="ngModel" required>
+          <input type="text" id="mesto" name="mesto" [(ngModel)]="lokacija" #mesto="ngModel" required>
           <div *ngIf="f.submitted && !mesto.valid" class="help-block">Naziv lokacije je obavezan</div>
         </div>
       </div>
@@ -14,19 +14,30 @@
   </div>
 </div>
 
-<div *ngIf="rezultati">
+<div>
   <div class="rezultati">
-
     <h1>
       <b>Rezultati pretrage:</b>
     </h1>
-    <div *ngFor="let s of smestaj">
-      <a [routerLink]="['detalji/' + s.id]">
+    <div *ngFor="let p of posts">
         <div class="container2">
-          <h2> {{s.naziv}}</h2>
-          
+          <h2> Korisnik: {{p.user}}</h2>
+          <h3> <img class="card-img-top img-responsive"
+            src = "{{'http://localhost:8084/ImgPost/'+ p.identificationNum}}" 
+            style = "height :200px;width:fil-content"
+           alt=""></h3>
+          <h3> Opis: {{p.description}}</h3>
+          <h3> Lokacija: {{p.location}}</h3>
+          <h3> Tag: {{p.tags[0]}}</h3>
+          <h3> Lajkovi: {{p.likes}}</h3>
+          <h3> Dislajkovi: {{p.dislikes}}</h3>
+          <h3> Komentari: </h3>
+          <div *ngFor="let c of p.comments">
+            <div >
+              <h3> {{c.content}}</h3>  
+            </div>
         </div>
-      </a>
+        </div>
     </div>
   </div>
 </div>

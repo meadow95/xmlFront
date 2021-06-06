@@ -1,5 +1,8 @@
 <div class="nav">
   <ul>
+    <li *ngIf="isLoggedIn">
+      <a routerLink='/home'>Pocetna stranica</a>
+    </li>
     <li>
       <a routerLink='/smestaj'>Profili</a>
     </li>
@@ -16,7 +19,10 @@
       <a routerLink='/registracija'>Registracija</a>
     </li>
     <li *ngIf="isLoggedIn">
-      <a routerLink='/poruke'>Poruke</a>
+      <a routerLink='/zahtevi'>Zahtevi</a>
+    </li>
+    <li *ngIf="isLoggedIn">
+      <a routerLink='/newPost'>Novi post</a>
     </li>
   </ul>
 </div>

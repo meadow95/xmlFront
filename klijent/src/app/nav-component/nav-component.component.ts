@@ -19,12 +19,16 @@ export class NavComponentComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    /*
     if (this.token.getToken() != null) {
       this.isLoggedIn = true;
     }
     this.toggleLoginService.change.subscribe(isLoggedIn => {
       this.isLoggedIn = isLoggedIn;
     });
+    */
+   //zakucacemo da je uvek ulogovano
+   this.isLoggedIn = true;
   }
 
   logout(): void {

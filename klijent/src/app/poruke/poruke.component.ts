@@ -23,8 +23,7 @@ export class PorukeComponent implements OnInit {
   ngOnInit() {
     this.korisnikService.getKorisnik(jwt_decode(this.token.getToken())).subscribe(
       data => {
-        this.primljene_poruke = data.primljene_poruke;
-        this.poslate_poruke = data.poslate_poruke;
+
       }
     );
   }

@@ -42,10 +42,6 @@ export class SmestajComponent implements OnInit {
 
   ngOnInit() {
 
-     this.smestajService.getSmestaje().subscribe(data => {
-      this.smestaj = data;
-      this.rezultati = true;
-     });
 
      
   }

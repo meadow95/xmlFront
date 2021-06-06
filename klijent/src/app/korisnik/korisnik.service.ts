@@ -14,8 +14,9 @@ export class KorisnikService {
 
   username: string;
 
-  private url_signup = 'http://localhost:8080/signup';
+  private url_signup = 'http://localhost:8083/signup';
   private url_korisnik = 'http://localhost:8080/user';
+  private url_user_username = 'http://localhost:8083/userUsername/';
 
   insertKorisnik(korisnik: Korisnik): Observable<Korisnik> {
     return this.http.post<Korisnik>(this.url_signup, korisnik, httpOptions);
@@ -30,11 +31,11 @@ export class KorisnikService {
   }
 
   getKorisnikByUsername(username: any): Observable<Korisnik> {
-    return this.http.get<Korisnik>('http://localhost:8080/korisnikUsername/' + username + '/');
+    return this.http.get<Korisnik>(this.url_user_username + username + '/');
   }
 
   getKorisnikByUsernameSearch(): Observable<Korisnik> {
-    return this.http.get<Korisnik>('http://localhost:8080/korisnikUsername/' + this.username + '/');
+    return this.http.get<Korisnik>(this.url_user_username + this.username + '/');
   }
 
   constructor(private http: HttpClient) { }

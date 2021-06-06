@@ -1,19 +1,11 @@
 <div class="col-75">
-  <div class="container">
-    <button  class="btn btn-link">Početna</button>
-    <button  class="btn">Sačuvane objave</button>
-    <button  class="btn">Slike</button>
-    <button  class="btn">Video</button>
-    
-  </div>
+
 </div>
 <h1 class="naslov">Korisnicki profil</h1>
 <div class="form">
-  <p><b>Ime:</b> {{korisnik?.ime}}</p>
-  <p><b>Prezime:</b> {{korisnik?.prezime}}</p>
+  <p><b>Ime:</b> {{korisnik?.name}}</p>
+  <p><b>Prezime:</b> {{korisnik?.surname}}</p>
   <p><b>Email:</b> {{korisnik?.email}}</p>
-  <p><b>Broj telefona:</b> {{korisnik?.brtel}}</p> 
-  <p><b>Adresa:</b> {{korisnik?.adresa}}</p>
   
   
   <button type="button" class="btn btn-outline-primary" (click)="change2(true)">Promena informacija</button><br>
@@ -22,30 +14,17 @@
   <form id="newform"style="max-width: 540px;">
       <div class="form-group">
         <label for="name">Ime</label>
-        <input type="text" [(ngModel)]="nkorisnik.ime"  name="newName" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Unesite ime">
+        <input type="text" [(ngModel)]="nkorisnik.name"  name="newName" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Unesite ime">
       </div>
       <div class="form-group">
         <label for="last">Prezime</label>
-        <input type="text" class="form-control"  [(ngModel)]="nkorisnik.prezime"  name="newLast" placeholder="Unesite prezime">
+        <input type="text" class="form-control"  [(ngModel)]="nkorisnik.surname"  name="newLast" placeholder="Unesite prezime">
       </div>
-      <div class="form-group">
-          <label for="city">Korisnicko ime</label>
-          <input type="text" class="form-control" [(ngModel)]="nkorisnik.username" name="newCity" placeholder="Unesite novo korisnicko ime">
-        </div>
-        <div class="form-group">
-          <label for="country">Lozinka</label>
-          <input type="text" [(ngModel)]="nkorisnik.password"  name="newCountry" class="form-control"   placeholder="Unesite novu lozinku">
-
-        </div>
         <div class="form-group">
             <label for="email">Email</label>
             <input type="text" [(ngModel)]="nkorisnik.email"  name="newEmail" class="form-control" placeholder="Unesite email">
             <small id="emailHelp" class="form-text text-muted">Enter new email.</small>
           </div>
-          <div class="form-group">
-              <label for="phone">Broj telefona</label>
-              <input type="number" class="form-control" [(ngModel)]="nkorisnik.brtel" name="newPhone" placeholder="Unesite broj telefona">
-            </div>
       <button type="submit" (click)="submitNewInfo()" class="btn btn-primary">Promeni informacije</button>
     </form>
 </div>

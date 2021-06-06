@@ -85,8 +85,8 @@ export class DetaljiComponent implements OnInit {
   sendKomentar() {
     this.korisnikService.getKorisnik(jwt_decode(this.token.getToken())).subscribe(
       data => {
-        this.ime = data.ime;
-        this.komentar = new Komentar(this.koment , false, this.ime );
+        this.ime = data.name;
+ //       this.komentar = new Komentar(this.koment , this.ime );
         console.log(this.komentar);
         this.komentarService.addKomentar(this.komentar, this.smestajId).subscribe();
       }

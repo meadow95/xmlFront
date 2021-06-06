@@ -1,8 +1,8 @@
 export class Komentar {
   constructor(
-    public sadrzaj: string,
-    public odobren: boolean,
-    public ime: string,
+    public content: string,
+    public postId: string,
+    public userUsername: string,
     public id?: string
   ) {}
 }

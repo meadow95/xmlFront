@@ -1,25 +1,36 @@
-<p>
 
-</p>
+<h1>Profil</h1>
 <div>
   <p><b>Username:</b> {{korisnik.username}}</p>
-  <p><b>Ime:</b> {{korisnik.ime}}</p>
-  <p><b>Prezime:</b> {{korisnik.prezime}}</p>
+  <p><b>Ime:</b> {{korisnik.name}}</p>
+  <p><b>Prezime:</b> {{korisnik.surname}}</p>
   <p><b>Email:</b> {{korisnik.email}}</p>
-  <p><b>Broj telefona:</b> {{korisnik.brtel}}</p> 
   </div>
-<div *ngIf="ima_postova">
+<div>
+  <h2>Postovi:</h2>
   <div class="rezultati">
-    <table id="tableSearch" *ngIf='flagForSearchTable' class="table table-hover table-bordered table-striped" matSort
-    (matSortChange)="sortData1($event)">
+    <table id="tableSearch" class="table table-hover table-bordered table-striped">
     <thead style="background-color:rgb(117, 197, 197, 0.5);">
       <tr>
-        <th>Postovi:</th>
+        <th>Opis</th>
+        <th>Lokacija</th>
+        <th>Tag</th>
+        <th>Slika</th>
+        <th>Lajkovi</th>
+        <th>Dislajkovi</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor='let post of postovi'>
-        <td >{{ post.slika }}</td>
+      <tr *ngFor='let post of posts'>
+        <td >{{ post.description}}</td>
+        <td >{{ post.location }}</td>
+        <td >{{ post.tags[0] }}</td>
+        <td ><img class="card-img-top img-responsive"
+          src = "{{'http://localhost:8084/ImgPost/'+ post.identificationNum}}" 
+          style = "height :200px;width:fil-content"
+         alt=""></td>
+         <td >{{ post.likes }}</td>
+         <td >{{ post.dislikes }}</td>
       </tr>
     </tbody>
   </table>

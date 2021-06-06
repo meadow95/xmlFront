@@ -21,26 +21,15 @@
     </div>
     <!-- ime -->
     <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !ime.valid }">
-      <input type="text" class="form-control" placeholder="Ime" name="ime" [(ngModel)]="korisnik.ime" required
+      <input type="text" class="form-control" placeholder="Ime" name="ime" [(ngModel)]="korisnik.name" required
         #ime="ngModel">
       <div class="help-block" *ngIf="f.submitted && !ime.valid">Ime je obavezno</div>
     </div>
     <!-- prezime -->
     <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !prezime.valid }">
-      <input type="text" class="form-control" placeholder="Prezime" name="prezime" [(ngModel)]="korisnik.prezime"
+      <input type="text" class="form-control" placeholder="Prezime" name="prezime" [(ngModel)]="korisnik.surname"
         required #prezime="ngModel">
       <div class="help-block" *ngIf="f.submitted && !prezime.valid">Prezime je obavezno</div>
-    </div>
-    <!-- brtel -->
-    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !brtel.valid }">
-      <input type="text" class="form-control" placeholder="Broj telefona" name="brtel" [(ngModel)]="korisnik.brtel"
-        required #brtel="ngModel">
-      <div class="help-block" *ngIf="f.submitted && !brtel.valid">Broj telefona je obavezan</div>
-    </div>
-    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !adresa.valid }">
-      <input type="text" class="form-control" placeholder="Adresa" name="adresa" [(ngModel)]="korisnik.adresa"
-        required #brtel="ngModel">
-      <div class="help-block" *ngIf="f.submitted && !adresa.valid">Adresa je obavezna</div>
     </div>
     <!-- submit -->
     <button class="btn btn-primary" [disabled]="loading">Registruj se</button>
