@@ -21,6 +21,7 @@
         <th>Lokacija</th>
         <th>Tag</th>
         <th>Slika</th>
+        <th></th>
         <th>Lajkovi</th>
         <th>Dislajkovi</th>
       </tr>
@@ -34,6 +35,8 @@
           src = "{{'http://localhost:8084/ImgPost/'+ post.identificationNum}}" 
           style = "height :200px;width:fil-content"
          alt=""></td>
+         <td><button mdbBtn type="button" color="success" rounded="true" mdbWavesEffect>Like</button>
+         <button mdbBtn type="button" color="success" rounded="true" mdbWavesEffect>Dislike</button></td>
          <td >{{ post.likes }}</td>
          <td >{{ post.dislikes }}</td>
       </tr>
