@@ -32,6 +32,7 @@ export class LoginComponent implements OnInit {
     this.loading = true;
     this.authService.attemptAuth(this.model.username, this.model.password).subscribe(
       data => {
+        sessionStorage.setItem("authenticatedUser", this.model.username);
         this.token.saveToken(data.token);
         this.router.navigate(['smestaj']);
         this.toggleLoginService.toggle();

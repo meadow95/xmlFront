@@ -18,6 +18,8 @@ export class ProfilComponent implements OnInit {
   
   nkorisnik = new Korisnik('', '', '', '', '', '', [], [], []);
 
+  username: string;
+
   constructor(
     private korisnikService: KorisnikService,
     private token: TokenStorage,
@@ -26,18 +28,34 @@ export class ProfilComponent implements OnInit {
 
   ngOnInit() {
     if (this.token.getToken() != null) {
-      this.getUser();
+      this.getUser2();
     }
   }
   private isButtonVisible2 = false;
 
   getUser() {
+    this.username = sessionStorage.getItem("authenticatedUser");
+    console.log("User je: " + this.username);
     this.korisnikService.getKorisnik(jwt_decode(this.token.getToken())).subscribe(
       data => {
         this.korisnik = data;
       }
     );
   }
+
+  
+
+  getUser2() {
+   console.log("Token je: " + this.token.getToken()); 
+    this.username = sessionStorage.getItem("authenticatedUser");
+    console.log("User je: " + this.username);
+    this.korisnikService.getKorisnikByUsername(this.username).subscribe(
+      data => {
+        this.korisnik = data;
+      }
+    );
+  }
+
   change2(isButtonVisible2: boolean) {
     if (this.isButtonVisible2 == false)
       this.isButtonVisible2 = true;

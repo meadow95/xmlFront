@@ -8,7 +8,7 @@ export class Korisnik {
     public surname: string,
     public email: string,
     public password: string,
-    public privateprofile: string,
+    public privateProfile: string,
     public followers: Array<Korisnik>,
     public following: Array<Korisnik>,
     public posts: Array<String>,

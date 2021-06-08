@@ -14,9 +14,9 @@ export class KorisnikService {
 
   username: string;
 
-  private url_signup = 'http://localhost:8083/signup';
+  private url_signup = 'http://localhost:8080/user/signup';
   private url_korisnik = 'http://localhost:8080/user';
-  private url_user_username = 'http://localhost:8083/userUsername/';
+  private url_user_username = 'http://localhost:8080/user/userUsername/';
 
   insertKorisnik(korisnik: Korisnik): Observable<Korisnik> {
     return this.http.post<Korisnik>(this.url_signup, korisnik, httpOptions);

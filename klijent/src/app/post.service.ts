@@ -10,7 +10,7 @@ const httpOptions = {
 @Injectable()
 export class PostService {
 
-  private url_post = 'http://localhost:8084';
+  private url_post = 'http://localhost:8080/post';
 
   constructor(private http: HttpClient) { }
 

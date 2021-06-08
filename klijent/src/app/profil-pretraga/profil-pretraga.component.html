@@ -5,8 +5,13 @@
   <p><b>Ime:</b> {{korisnik.name}}</p>
   <p><b>Prezime:</b> {{korisnik.surname}}</p>
   <p><b>Email:</b> {{korisnik.email}}</p>
-  </div>
-<div>
+  <br>
+
+  <button class="btn btn-success" (click)="sendRequest()">Zaprati profil</button>
+
+  <h1 *ngIf= "!publicProfile">Privatni profil</h1>
+  </div> 
+<div *ngIf= "publicProfile">
   <h2>Postovi:</h2>
   <div class="rezultati">
     <table id="tableSearch" class="table table-hover table-bordered table-striped">

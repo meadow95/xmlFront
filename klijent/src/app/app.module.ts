@@ -35,6 +35,7 @@ import { PostService } from './post.service';
 import { HomeComponent } from './home/home.component';
 import { ZahteviComponent } from './zahtevi/zahtevi.component';
 import { NoviComponent } from './novi_post/novi.component';
+import { ZahteviService } from './zahtevi.service';
 
 
 
@@ -76,6 +77,7 @@ import { NoviComponent } from './novi_post/novi.component';
     KomentarService,
     PorukaService,
     PostService,
+    ZahteviService,
     {provide: HTTP_INTERCEPTORS,
       useClass: Interceptor,
       multi : true},

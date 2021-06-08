@@ -1,9 +1,9 @@
 <div class="col-md-4 col-md-offset-4">
   <h2>Prijava</h2>
-  <form name="form" (ngSubmit)="f.form.valid && login()" class="register-form" #f="ngForm" novalidate>
+  <form name="form" (ngSubmit)="login()" class="register-form" #f="ngForm" novalidate>
     <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
-      <input type="email" class="form-control" placeholder="Email" name="username" [(ngModel)]="model.username" #username="ngModel" required email />
-      <div *ngIf="f.submitted && !username.valid" class="help-block">Email je obavezan i mora biti u formatu(aaa@bb.cc)</div>
+      <input class="form-control" placeholder="Username" name="username" [(ngModel)]="model.username" #username="ngModel" required email />
+      <div *ngIf="f.submitted" class="help-block">Email je obavezan i mora biti u formatu(aaa@bb.cc)</div>
     </div>
     <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
       <input type="password" class="form-control" placeholder="Sifra" name="password" [(ngModel)]="model.password" #password="ngModel" required />
