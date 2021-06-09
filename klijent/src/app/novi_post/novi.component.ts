@@ -10,7 +10,7 @@ import { PostService } from '../post.service';
 export class NoviComponent implements OnInit {
 
   description: string;
-  user: string = "jovana";
+  user: string;
   location: string;
   tag: string;
   picture: string;
@@ -23,6 +23,8 @@ export class NoviComponent implements OnInit {
   constructor(private postService: PostService,) { }
 
   ngOnInit() {
+
+    this.user = sessionStorage.getItem("authenticatedUser");
   }
 
   onSelectFile(event) {

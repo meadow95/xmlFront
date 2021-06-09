@@ -1,3 +1,31 @@
-<p>
-  home works!
-</p>
+<h1>Vasa pocetna strana</h1>
+
+<div >
+  <div class="rezultati">
+    <table id="tableSearch" class="table table-hover table-bordered table-striped">
+    <thead style="background-color:rgb(117, 197, 197, 0.5);">
+      <tr>
+        <th>Opis</th>
+        <th>Lokacija</th>
+        <th>Tag</th>
+        <th>Slika</th>
+        <th>Lajkovi</th>
+        <th>Dislajkovi</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let post of posts'>
+        <td >{{ post.description}}</td>
+        <td >{{ post.location }}</td>
+        <td >{{ post.tags[0] }}</td>
+        <td ><img class="card-img-top img-responsive"
+          src = "{{'http://localhost:8084/ImgPost/'+ post.identificationNum}}" 
+          style = "height :200px;width:fil-content"
+         alt=""></td>
+         <td >{{ post.likes }}</td>
+         <td >{{ post.dislikes }}</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</div>

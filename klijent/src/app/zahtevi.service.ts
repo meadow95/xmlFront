@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Korisnik } from './korisnik/korisnik';
+import { Zahtev } from './model/zahtev';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-type': 'application/json'})
@@ -20,5 +21,17 @@ export class ZahteviService {
 
   sendRequest(user: string, following: string): Observable<string> {
     return this.http.get<string>(this.url_post + '/followPrivate/' + user + '/' + following, httpOptions);
+  }
+
+  getRequests(user: string): Observable<Zahtev[]> {
+    return this.http.get<Zahtev[]>(this.url_post + '/getRequests/' + user);
+  }
+
+  acceptRequest(request: string): Observable<string> {
+    return this.http.get<string>(this.url_post + '/acceptRequest/' + request, httpOptions);
+  }
+
+  ignoreRequest(request: string): Observable<string> {
+    return this.http.get<string>(this.url_post + '/ignoreRequest/' + request, httpOptions);
   }
 }

@@ -31,5 +31,9 @@ export class PostService {
     return this.http.get<Post[]>(this.url_post + '/getPostsUser/' + user + '/', httpOptions);
   }
 
+  getHomePage(user: string): Observable<Post[]> {
+    return this.http.get<Post[]>(this.url_post + '/getHome/' + user + '/', httpOptions);
+  }
+
 
 }

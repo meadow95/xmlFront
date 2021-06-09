@@ -1,3 +1,14 @@
-<p>
-  zahtevi works!
-</p>
+<div>
+  <div class="rezultati">
+    <h1>
+      <b>Vasi zahtevi:</b>
+    </h1>
+    <div *ngFor="let p of zahtevi">
+        <div class="container2">
+          <h2> Korisnik: {{p.sender}}</h2>
+          <button class = "btn btn-success" (click)="prihvati(p.identificationNum)">Prihvati</button>
+          <button class = "btn btn-error" (click)="odbij(p.identificationNum)">Odbij</button>
+        </div>
+    </div>
+  </div>
+</div>

@@ -16,13 +16,13 @@ export class ProfilPretragaComponent implements OnInit {
   ima_postova: number = 0;
   posts: Post[];
   publicProfile: number = 0;
-  username: string = "jovana";
+  username: string;
 
   constructor(private korisnikService: KorisnikService, private postService: PostService, private zahteviService: ZahteviService) { }
 
   ngOnInit() {
 
-   // this.username = sessionStorage.getItem("authenticatedUser");
+    this.username = sessionStorage.getItem("authenticatedUser");
 
     this.korisnikService.getKorisnikByUsernameSearch().subscribe(data => {
       this.korisnik = data;
